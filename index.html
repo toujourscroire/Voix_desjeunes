@@ -1,1 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Voix des Jeunes - Podcast sur l'actualité, la société et la politique en Côte d'Ivoire">
+    <title>Voix des Jeunes - Podcast</title>
+    
+    <style>
+        /* ========================================
+           COULEURS DE LA CÔTE D'IVOIRE
+           Orange: #FF8C00
+           Blanc: #FFFFFF
+           Vert: #009E60
+           ======================================== */
+        
+        /* ========================================
+           RESET & BASE STYLES
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* ========================================
+           LOGO STYLES
+           ======================================== */
+        .logo {
+            width: 120px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 50%, #009E60 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero .slogan {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* ========================================
+           SECTIONS GÉNÉRALES
+           ======================================== */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: #FF8C00;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto 20px;
+            text-align: justify;
+        }
+
+        /* ========================================
+           SECTION QUI SOMMES-NOUS
+           ======================================== */
+        .about {
+            background-color: #f9f9f9;
+        }
+
+        /* ========================================
+           SECTION MISSION
+           ======================================== */
+        .mission {
+            background-color: #fff;
+        }
+
+        .mission ul {
+            list-style: none;
+            max-width: 800px;
+            margin: 30px auto 0;
+            padding: 0;
+        }
+
+        .mission li {
+            font-size: 1.15rem;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, rgba(255, 140, 0, 0.1) 0%, rgba(0, 158, 96, 0.1) 100%);
+            border-left: 4px solid #FF8C00;
+            border-radius: 5px;
+            color: #333;
+        }
+
+        .mission li::before {
+            content: "✓ ";
+            color: #009E60;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* ========================================
+           SECTION CE QUE NOUS ABORDONS
+           ======================================== */
+        .topics {
+            background-color: #f9f9f9;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+
+        .topic-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #FF8C00;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+            border-top-color: #009E60;
+        }
+
+        .topic-card h3 {
+            font-size: 1.4rem;
+            color: #009E60;
+            margin-bottom: 10px;
+        }
+
+        .topic-card p {
+            font-size: 1rem;
+            color: #666;
+            text-align: center;
+        }
+
+        /* ========================================
+           SECTION OÙ NOUS ÉCOUTER
+           ======================================== */
+        .platforms {
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .platform-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .platform-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px 35px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: 2px solid #FF8C00;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .platform-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+        }
+
+        /* Couleurs spécifiques par plateforme */
+        .platform-btn.spotify:hover {
+            background-color: #1DB954;
+            color: white;
+            border-color: #1DB954;
+        }
+
+        .platform-btn.youtube:hover {
+            background-color: #FF0000;
+            color: white;
+            border-color: #FF0000;
+        }
+
+        .platform-btn.apple:hover {
+            background-color: #A855F7;
+            color: white;
+            border-color: #A855F7;
+        }
+
+        .platform-btn.tiktok:hover {
+            background-color: #000;
+            color: white;
+            border-color: #000;
+        }
+
+        /* Effet drapeau ivoirien sur les boutons */
+        .platform-btn::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            background: linear-gradient(90deg, #FF8C00 33%, #fff 33%, #fff 66%, #009E60 66%);
+            transition: width 0.3s ease;
+            border-radius: 50px 0 0 50px;
+            z-index: -1;
+        }
+
+        .platform-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Icônes des plateformes (emojis) */
+        .platform-icon {
+            font-size: 1.5rem;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            background: linear-gradient(90deg, #FF8C00 0%, #FF8C00 33%, #fff 33%, #fff 66%, #009E60 66%, #009E60 100%);
+            color: #333;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 1rem;
+        }
+
+        footer p {
+            background: rgba(255, 255, 255, 0.9);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            color: #FF8C00;
+        }
+
+        /* ========================================
+           BANDE TRICOLORE DÉCORATIVE
+           ======================================== */
+        .flag-stripe {
+            height: 8px;
+            background: linear-gradient(90deg, #FF8C00 0%, #FF8C00 33%, #fff 33%, #fff 66%, #009E60 66%, #009E60 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN
+           ======================================== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .slogan {
+                font-size: 1.3rem;
+            }
+
+            .hero .description {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            section p {
+                font-size: 1rem;
+                text-align: left;
+            }
+
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .platform-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .platform-btn {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .logo {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bande tricolore en haut -->
+    <div class="flag-stripe"></div>
+
+    <!-- ========================================
+         SECTION HERO (ACCUEIL)
+         ======================================== -->
+    <section class="hero">
+        <!-- Logo centré en haut -->
+        <img src="logo.png" alt="Logo Voix des Jeunes" class="logo">
+        
+        <h1>Voix des Jeunes</h1>
+        <p class="slogan">La parole aux jeunes ivoiriens</p>
+        <p class="description">
+            Un podcast qui décrypte l'actualité, la société et la politique en Côte d'Ivoire 
+            avec un regard jeune, informé et constructif.
+        </p>
+    </section>
+
+    <!-- ========================================
+         SECTION QUI SOMMES-NOUS ?
+         ======================================== -->
+    <section class="about">
+        <h2>Qui sommes-nous ?</h2>
+        <p>
+            <strong>Voix des Jeunes</strong> est un podcast pensé par et pour la jeunesse ivoirienne. 
+            Nous abordons les grands sujets qui façonnent notre pays : l'actualité nationale, 
+            les enjeux sociétaux, les débats politiques et les initiatives portées par les jeunes.
+        </p>
+        <p>
+            Notre approche se veut neutre, respectueuse et pédagogique. Nous croyons qu'informer 
+            ne signifie pas diviser, et que chaque voix mérite d'être entendue dans un espace de dialogue constructif.
+        </p>
+        <p>
+            Que vous soyez étudiant, entrepreneur, militant ou simple citoyen, ce podcast est fait pour vous. 
+            Ensemble, construisons une génération mieux informée et plus engagée.
+        </p>
+    </section>
+
+    <!-- ========================================
+         SECTION NOTRE MISSION
+         ======================================== -->
+    <section class="mission">
+        <h2>Notre mission</h2>
+        <p>
+            Chez <strong>Voix des Jeunes</strong>, nous avons à cœur de créer un espace d'information 
+            accessible, fiable et inspirant. Nos objectifs sont clairs :
+        </p>
+        <ul>
+            <li>Informer sans diviser : Présenter les faits de manière objective et équilibrée</li>
+            <li>Sensibiliser les jeunes : Éveiller les consciences sur les enjeux qui nous concernent tous</li>
+            <li>Encourager la réflexion : Stimuler le débat constructif et la pensée critique</li>
+            <li>Valoriser les initiatives : Mettre en lumière les actions positives de la jeunesse ivoirienne</li>
+        </ul>
+    </section>
+
+    <!-- ========================================
+         SECTION CE QUE NOUS ABORDONS
+         ======================================== -->
+    <section class="topics">
+        <h2>Ce que nous abordons</h2>
+        <p>
+            Chaque épisode explore des thématiques variées qui touchent directement la jeunesse ivoirienne et l'avenir du pays.
+        </p>
+        
+        <div class="topics-grid">
+            <div class="topic-card">
+                <h3>📰 Actualité nationale</h3>
+                <p>Les événements qui font l'actualité en Côte d'Ivoire, décryptés et expliqués</p>
+            </div>
+            
+            <div class="topic-card">
+                <h3>🌍 Société</h3>
+                <p>Éducation, santé, emploi, culture : les enjeux qui façonnent notre quotidien</p>
+            </div>
+            
+            <div class="topic-card">
+                <h3>⚖️ Politique</h3>
+                <p>Comprendre les décisions publiques et leur impact sur notre vie</p>
+            </div>
+            
+            <div class="topic-card">
+                <h3>🚀 Initiatives jeunesse</h3>
+                <p>Les projets innovants portés par les jeunes ivoiriens</p>
+            </div>
+            
+            <div class="topic-card">
+                <h3>🔍 Décryptage</h3>
+                <p>Analyse approfondie des décisions et politiques publiques</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION OÙ NOUS ÉCOUTER
+         ======================================== -->
+    <section class="platforms">
+        <h2>Où nous écouter</h2>
+        <p>
+            Retrouvez tous nos épisodes sur vos plateformes préférées. Abonnez-vous pour ne rien manquer !
+        </p>
+        
+        <div class="platform-buttons">
+            <a href="#" class="platform-btn spotify">
+                <span class="platform-icon">🎵</span>
+                Spotify
+            </a>
+            
+            <a href="#" class="platform-btn youtube">
+                <span class="platform-icon">▶️</span>
+                YouTube
+            </a>
+            
+            <a href="#" class="platform-btn apple">
+                <span class="platform-icon">🎧</span>
+                Apple Podcasts
+            </a>
+            
+            <a href="#" class="platform-btn tiktok">
+                <span class="platform-icon">📱</span>
+                TikTok
+            </a>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer>
+        <p>&copy; Voix des Jeunes – Tous droits réservés</p>
+    </footer>
+</body>
+</html>
